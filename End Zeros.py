@@ -10,16 +10,17 @@
 # end_zeros(1) == 0
 # end_zeros(10) == 1
 # end_zeros(101) == 0
+# def end_zeros(num: int) -> int:
+#     num = list(str(num))
+#     sum_zeros = 0
+#     for zero in reversed(num):
+#         if zero != '0':
+#             break
+#         else:
+#             sum_zeros +=1
+#     return sum_zeros
 def end_zeros(num: int) -> int:
-    num = list(str(num))
-    sum_zeros = 0
-    for zero in reversed(num):
-        if zero != '0':
-            break
-        else:
-            sum_zeros +=1
-    return sum_zeros
-
+    return len(str(num)) - len(str(num).rstrip('0'))
 
 if __name__ == '__main__':
     print("Example:")

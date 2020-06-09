@@ -13,15 +13,19 @@
 # remove_all_before([1, 2, 3, 4, 5], 3) == [3, 4, 5]
 # remove_all_before([1, 1, 2, 2, 3, 3], 2) == [2, 2, 3, 3]
 from typing import Iterable
-def remove_all_before(items: list, border: int) -> Iterable:
-    if items:
-        if border not in items:
-            return items
-        else:
-            return items[items.index(border):]
-    else:
+# def remove_all_before(items: list, border: int) -> Iterable:
+#     if items:
+#         if border not in items:
+#             return items
+#         else:
+#             return items[items.index(border):]
+#     else:
+#         return items
+def remove_all_before(items, border):
+    try:
+        return items[items.index(border):]
+    except ValueError:
         return items
-
 
 
 if __name__ == '__main__':
