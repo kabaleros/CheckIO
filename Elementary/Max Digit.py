@@ -8,14 +8,18 @@
 # max_digit(634) == 6
 # max_digit(1) == 1
 # max_digit(10000) == 1
+
+# def max_digit(number: int) -> int:
+#     number_list = []
+#     for digit in str(number):
+#         digit=int(digit)
+#         number_list.append(digit)
+#
+#     return max(number_list)
+
+
 def max_digit(number: int) -> int:
-    number_list = []
-    for digit in str(number):
-        digit=int(digit)
-        number_list.append(digit)
-
-    return max(number_list)
-
+    return int(max(str(number)))
 
 if __name__ == '__main__':
     print("Example:")
