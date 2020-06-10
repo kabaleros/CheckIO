@@ -20,8 +20,12 @@ def nearest_value(values: set, one: int) -> int:
      res = [key for key in diff if diff[key] == min(diff.values())]
      return(min(res))
 
+def nearest_value(values: set, one: int) -> int:
+    def distance(value): return abs(value - one), value > one
+    return min(values, key=distance)
 
-# res = max(idx for idx, val in enumerate(test_list) if val == 'e')
+def nearest_value(values: set, one: int) -> int:
+    return min((abs(n-one), n) for n in values)[1]
 
 if __name__ == '__main__':
     print("Example:")
